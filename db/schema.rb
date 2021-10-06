@@ -13,39 +13,61 @@
 ActiveRecord::Schema.define(version: 2021_10_05_130458) do
 
   create_table "admin_users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phon"
+    t.string "address"
+    t.string "password"
+    t.text "image"
+    t.datetime "create_at"
+    t.datetime "update_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "public_favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "tweet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "public_relationships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "tweet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "public_tweet_comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "tweet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "public_tweets", force: :cascade do |t|
+    t.integer "tweet_id"
+    t.text "body"
+    t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "public_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.string "email"
+    t.string "phon"
+    t.string "address"
+    t.string "password"
+    t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "name"
     t.index ["email"], name: "index_public_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_public_users_on_reset_password_token", unique: true
   end

@@ -4,7 +4,7 @@ class AddDeviseToPublicUsers < ActiveRecord::Migration[5.2]
   def self.up
     change_table :public_users do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
+      #t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
@@ -32,7 +32,7 @@ class AddDeviseToPublicUsers < ActiveRecord::Migration[5.2]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
       
-      t.string :name
+      #t.string :name
 
 
       # Uncomment below if timestamps were not included in your original model.
