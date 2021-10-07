@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Work</title>
+    <title>ルックミー</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+　<div claas="">
+　 <sideber>
+　   <% if user_signed_in? %>
+　   <% link_to "Home" public_user_path %>
+　   <% link_to "tweet" public_tweet_index_path %>
+　   <% link_to "通知" %>
+　   <% link_to "DM" %>
+　 </sideber>
+　</div>
   <body>
     <%= yield %>
   </body>
