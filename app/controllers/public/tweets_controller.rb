@@ -1,36 +1,37 @@
 class Public::TweetsController < ApplicationController
   def index
-    @tweet = Tweet.new
-    @tweets = Tweet.all
+    @tweet = Public::Tweet.new
+    @tweets = Public::Tweet.all
   end
-    
+
   def show
-    @tweet = Tweet.find(params[:id])
+    @tweet = Public::Tweet.find(params[:id])
   end
-    
+
   def new
-    @tweet = Tweet.new
-    
+    @tweet = Public::Tweet.new
+
   end
-  
-  def crate
-    @tweet = Tweet.new
-    tweet.save
-    redirect_to public_tweet_index_path
+
+  def create
+    @tweet = Public::Tweet.new
+    @tweet.user_id = current_user.id
+    @tweet.save
+    redirect_to public_tweets_path
   end
-  
+
   def edit
-    @tweet = Tweet.find(params[:id])
+    @tweet = Public::Tweet.find(params[:id])
   end
-  
+
   def update
-    tweet = Tweet.find(params[:id])
+    tweet = Public::Tweet.find(params[:id])
     tweet.update(tweet_params)
     redirect_to public_tweet_path
   end
 
  private
-  def tweet_params 
-   params.require(:tweet).permit(:body)
+  def tweet_params
+   params.require(:tweet).permit(:body, :image)
   end
 end

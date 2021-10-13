@@ -1,0 +1,19 @@
+<table class="table">
+  <tr>
+    <th><h2>Home</h2></th>
+    <th><%= link_to '投稿', new_public_tweet_path %></th>
+  </tr>
+</table>
+ <%= @tweets.each do |tweet| %>
+  <% tweet.body %>
+  <%#= attachment_image_tag tweet, :image, :fill, 50,50, format:'jpeg' %>
+  <%if @tweet.favorite?(current_user)%>
+    <%= link_to public_favorites_path(@tweet), method: :delete do %>
+        <span style="color:red;">❤︎</span>
+    <%end%>
+    <%else%>
+    <%= link_to public_favorites_path(@post), method: :tweet do %>
+        <span>❤︎</span>
+    <%end%>
+  <%end%>
+ <% end %>

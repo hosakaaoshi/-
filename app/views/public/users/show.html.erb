@@ -1,0 +1,9 @@
+<h2>マイページ</h2>
+<%#= attachment_image_tag @user, :image, fallback: "no_image.jpg",size:'40x40',format: 'no_image.jpg' %>
+<table class="table">
+<tr>
+<th><%= @user.name %></th>
+<th><%= link_to "プロフィール編集", edit_public_user_path(@user) %></th>
+</tr>
+</table>
+<%= @user.tweet %>

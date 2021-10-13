@@ -3,7 +3,7 @@ class CreatePublicFavorites < ActiveRecord::Migration[5.2]
     create_table :public_favorites do |t|
       t.integer :user_id
       t.integer :tweet_id
-
+      t.integer :tweet_comment_id
       t.timestamps
     end
   end
