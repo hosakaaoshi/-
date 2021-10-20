@@ -6,4 +6,7 @@
 <th><%= link_to "プロフィール編集", edit_public_user_path(@user) %></th>
 </tr>
 </table>
-<%= @user.tweet %>
+<% @tweets.each do |tweet| %>
+ <%= link_to public_user_path (tweet.user) %>
+ <%= link_to tweet.body, public_tweet_path(tweet) %>
+<% end %>

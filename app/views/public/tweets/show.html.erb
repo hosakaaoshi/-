@@ -4,7 +4,7 @@
 <th><%= @tweet.user.name %></th>
 <th><%= @tweet.body %>
 <%= attachment_image_tag @tweet, :image, :fill, 100,100, format: 'jpeg' %></th>
-<th><%= link_to "編集"、edit_public_tweet_path %></th>
+<th><%= link_to "編集"、edit_public_tweet_path(tweet) %></th>
 </tr>
 </table>
 <% @comments.tweet_comments.each do |comment| %>

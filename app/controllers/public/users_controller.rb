@@ -2,6 +2,7 @@ class Public::UsersController < ApplicationController
  def show
   @user = Public::User.find(params[:id])
   @tweet = @user.tweet
+  @tweets = Public::Tweet.all
   #@image = Image.find(params[:id])
  end
 
@@ -24,4 +25,3 @@ class Public::UsersController < ApplicationController
 
 
 end
-

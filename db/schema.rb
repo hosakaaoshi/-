@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_13_142440) do
+ActiveRecord::Schema.define(version: 2021_10_16_122159) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string "name"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2021_10_13_142440) do
   create_table "public_favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "tweet_id"
-    t.integer "tweet_comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
